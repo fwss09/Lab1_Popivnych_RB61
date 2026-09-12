@@ -1,15 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// part1
 #define Name "Andrii"
 #define LastName "Popivnych"
 #define GroupName "RB-61"
 #define Faculty "RTF"
 #define University "Igor Sikorsky Kyiv Polytechnic Institute"
+// part 1
 
-//------ точка входу до програми --------
-int main()
-{
+int printSymbols(int count, char symbol) {
+    printf("\n");
+    for (int i = 0; i < count; i++) {
+        printf("%c", symbol);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+int run_part1() {
     //------ Оголошення змінних. Не ініціалізовані. ------
     unsigned int semestr, age;
 
@@ -45,23 +56,34 @@ int main()
 
     // Очищення екрану
     system("cls");
+    printf("\n");
 
     // Виведення інформації
     printf("%s", University);
     printf("\n%s", Faculty);
     printf("\n%s", GroupName);
 
-    printf("\n---------------------------");
+    printSymbols(15, '-');
 
-    printf("\nstudent: %s %s", Name, LastName );
+    printf("student: %s %s", Name, LastName );
     printf("\nage: %u", age);
     printf("\nsemestr: %u", semestr);
-    printf("\n---------------------------");
+
+    printSymbols(15, '-');
 
     printf("\nadmission score: %.2f", admissionScore);
     printf("\naverage grade = %.3lf", averageGrade);
 
     printf("\n");
 
+    return 0;
+}
+
+int run_part2() {
+    return 0;
+}
+
+int main() {
+    run_part1();
     return 0;
 }
